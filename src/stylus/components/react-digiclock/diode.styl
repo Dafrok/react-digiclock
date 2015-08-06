@@ -1,0 +1,108 @@
+@import "./color.styl"
+@import "./size.styl"
+
+diode-corner()
+  content ''
+  position absolute
+  width 0
+  height 0
+  transition border-color diode-duration
+screen()
+  background color-screen
+  width screen-width
+  height screen-height
+  overflow hidden
+  position relative
+  display inline-block
+  font-size 0
+  line-height 0
+  margin diode-short-side
+.screen
+  screen()
+  &>.diode
+    background color-diode
+    width 0
+    height 0
+    position absolute
+    transition background-color diode-duration
+
+    &.horizontal
+      width diode-long-side
+      height diode-short-side
+      left 0
+      right 0
+      margin auto
+      &::after,&::before
+        diode-corner()
+      &::before
+        left diode-corner-offset
+        border-top diode-corner-size solid transparent
+        border-right diode-corner-size solid color-diode
+        border-bottom diode-corner-size solid transparent
+      &::after
+        right diode-corner-offset
+        border-top diode-corner-size solid transparent
+        border-left diode-corner-size solid color-diode
+        border-bottom diode-corner-size solid transparent
+      &.top
+        top 0
+      &.middle
+        top 50%
+        bottom 50%
+      &.bottom
+        bottom 0
+    &.vertical
+      width diode-short-side
+      height diode-long-side
+      &::after,&::before
+        diode-corner()
+      &::after
+        bottom diode-corner-offset
+        border-left diode-corner-size solid transparent
+        border-right diode-corner-size solid transparent
+        border-top diode-corner-size solid color-diode
+      &::before
+        top diode-corner-offset
+        border-left diode-corner-size solid transparent
+        border-right diode-corner-size solid transparent
+        border-bottom diode-corner-size solid color-diode
+      &.top
+        top (diode-short-side*1.25)
+      &.bottom
+        bottom (diode-short-side*1.25)
+      &.left
+        left 0
+      &.right
+        right 0
+    &.active
+      background color-diode-active
+      &.horizontal
+        &::before
+          border-right-color color-diode-active
+        &::after
+          border-left-color color-diode-active
+      &.vertical
+        &::after
+          border-top diode-corner-size solid color-diode-active
+        &::before
+          border-bottom diode-corner-size solid color-diode-active
+
+colon()
+  width diode-short-side
+  height diode-short-side
+  background color-diode-active
+  position absolute
+  border-radius (diode-short-side / 4)
+  content ''
+  left 0
+  right 0
+  margin auto
+.screen-colon
+  screen()
+  width (screen-width/2)
+  &::after
+    colon()
+    top 30%
+  &::before
+    colon()
+    bottom 30%

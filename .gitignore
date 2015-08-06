@@ -1,0 +1,13 @@
+.idea/
+node_modules/
+build/
+
+.idea/codeStyleSettings.xml
+
+.idea/jsLibraryMappings.xml
+
+.idea/libraries/react_digiclock_node_modules.xml
+
+.idea/watcherTasks.xml
+
+build/index.html
