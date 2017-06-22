@@ -9,7 +9,6 @@ export default class Panel extends React.Component {
     }
   }
   componentWillReceiveProps (props) {
-    console.log(props)
     this.setState({letters: props.letters})
   }
   render () {

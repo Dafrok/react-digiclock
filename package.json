@@ -16,7 +16,8 @@
     "webpack": "^3.0.0"
   },
   "scripts": {
-    "dev": "webpack-dev-server --content-base dist --config ./webpack.config.js --hot --inline"
+    "dev": "webpack-dev-server --content-base dist --config ./webpack.config.js --hot --inline",
+    "docs": "webpack -p"
   },
   "author": "Dafrok",
   "license": "ISC",
