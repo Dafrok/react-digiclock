@@ -1,27 +1,11 @@
-import React from 'react'
-import {ScreenNumber,ScreenColon} from './screen.jsx'
+import React from 'react';
+import ScreenNumber from './screen-number.jsx';
 
-export default class Panel extends React.Component {
-  constructor (props) {
-    super()
-    this.state = {
-      letters: props.letters
+export default function panel({ letters }) {
+    if (typeof letters !== 'string') {
+        return null;
     }
-  }
-  componentWillReceiveProps (props) {
-    this.setState({letters: props.letters})
-  }
-  render () {
-    const letters = this.state.letters
-    return <div>
-      <ScreenNumber letter={letters[0]}/>
-      <ScreenNumber letter={letters[1]}/>
-      <ScreenColon />
-      <ScreenNumber letter={letters[2]}/>
-      <ScreenNumber letter={letters[3]}/>
-      <ScreenColon />
-      <ScreenNumber letter={letters[4]}/>
-      <ScreenNumber letter={letters[5]}/>
-    </div>
-  }
+    return [].map.call(letters, letter => {
+        return <ScreenNumber letter={letter} />
+    });
 }

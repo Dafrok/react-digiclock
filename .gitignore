@@ -11,3 +11,6 @@ build/
 .idea/watcherTasks.xml
 
 build/index.html
+
+.cache
+.parcel-cache
