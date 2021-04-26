@@ -9,7 +9,6 @@ export default function screenNumber({letter}) {
     }
     return (
         <div className='screen'>
-            {letter} {dict[letter]?.middle}
             <Diode position='top horizontal' isShow={dict[letter]?.top} />
             <Diode position='middle horizontal' isShow={dict[letter]?.middle} />
             <Diode position='bottom horizontal' isShow={dict[letter]?.bottom} />
