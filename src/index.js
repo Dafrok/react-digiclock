@@ -2,7 +2,27 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Clock from './components/clock.jsx';
 
-ReactDOM.render(<div>
-    <h1>距离《怪物猎人：崛起 version 2.0》配信还有：</h1>
-    <Clock />
-</div>, document.getElementById('app'));
+function App() {
+    const deadline = React.useMemo(() => {
+        // '2021-04-27 22:00:00'
+        const d = new Date();
+        d.setFullYear(2021);
+        d.setMonth(3);
+        d.setDate(27);
+        d.setHours(22);
+        d.setMinutes(0);
+        d.setSeconds(0);
+        return d;
+    });
+    return (
+        <div>
+            <h1>距离《怪物猎人：崛起 version 2.0》配信还有：</h1>
+            <Clock deadline={deadline} />
+        </div>
+    )
+}
+
+ReactDOM.render(
+    <App />,
+    document.getElementById('app')
+);

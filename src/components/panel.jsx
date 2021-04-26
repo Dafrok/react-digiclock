@@ -5,7 +5,7 @@ export default function panel({ letters }) {
     if (typeof letters !== 'string') {
         return null;
     }
-    return [].map.call(letters, letter => {
-        return <ScreenNumber letter={letter} />
+    return [].map.call(letters, (letter, index) => {
+        return <ScreenNumber key={index} letter={letter} />
     });
 }
