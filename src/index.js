@@ -4,10 +4,10 @@ import Clock from './components/clock.jsx';
 
 function App() {
     const deadline = React.useMemo(() => {
-        // '2021-04-27 22:00:00'
+        // '2021-05-27 22:00:00'
         const d = new Date();
         d.setFullYear(2021);
-        d.setMonth(3);
+        d.setMonth(4);
         d.setDate(27);
         d.setHours(22);
         d.setMinutes(0);
