@@ -16,7 +16,7 @@ function App() {
     });
     return (
         <div>
-            <h1>距离《怪物猎人：崛起 version 2.0》配信还有：</h1>
+            <h1>距离《怪物猎人：崛起 version 3.0》配信还有：</h1>
             <Clock deadline={deadline} />
         </div>
     )
