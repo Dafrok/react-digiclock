@@ -9,7 +9,7 @@ function App() {
         d.setFullYear(2021);
         d.setMonth(4);
         d.setDate(27);
-        d.setHours(22);
+        d.setHours(9);
         d.setMinutes(0);
         d.setSeconds(0);
         return d;
@@ -19,7 +19,7 @@ function App() {
             <h1>距离《怪物猎人：崛起 version 3.0》配信还有：</h1>
             <Clock deadline={deadline} />
         </div>
-    )
+    );
 }
 
 ReactDOM.render(
